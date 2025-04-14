@@ -8,9 +8,22 @@
 <body>
     <div>
         <h2>Somar Valores</h2>
-        <input type="text" id="valor1" placeholder="Digite o valor 1">
-        <input type="text" id="valor2" placeholder="Digite o valor 2">
+        <input type="text" id="valor1" placeholder="Digite o valor 1"><br><br>
+        <input type="text" id="valor2" placeholder="Digite o valor 2"><br><br>
         <input type="text" id="valor3" placeholder="Digite o valor 3">
     </div>
+    <br>
+    <button onclick="soma();">Somar</button>
+    <br>
+    <p id="resultado"></p>
+    <script>
+        function soma(){
+            const v1 = parseFloat(document.getElementById("valor1").value);
+            const v2 = parseFloat(document.getElementById("valor2").value);
+            const v3 = parseFloat(document.getElementById("valor3").value);
+            const somatudo = v1 + v2 + v3;
+            document.getElementById("resultado").innerHTML = "A soma é: " + somatudo;
+        }
+    </script>
 </body>
 </html>
