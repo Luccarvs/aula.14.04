@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Escolha sua cor</h2>
+    <select id="corselecionada">
+        <option value="#ffffff">Branco</option>
+        <option value="#ff8080">Vermelho</option>
+        <option value="#add8e6">Azul Claro</option>
+        <option value="#00ff00">Verde</option>
+    </select>
+    <button onclick="aplicacor();">Aplicar cor</button>
+
+    <script>
+        function aplicacor(){
+            const cor = document.getElementById("corselecionada").value;
+            document.body.style.backgroundColor = cor
+        }
+    </script>
+</body>
+</html>
