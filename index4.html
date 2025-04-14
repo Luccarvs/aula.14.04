@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Mudar a cor da página</h2>
+    <button onclick="mudarcor()">Clique para mudar a cor</button>
+
+    <script>
+        function mudarcor(){
+            const cores = ["#FA12FA", "#FFFF89", "#AA54FF"]; 
+            const coraleatoria = cores[Math.floor(Math.random() * cores.length)];
+            document.body.style.backgroundColor = coraleatoria;
+        }
+    </script>
+</body>
+</html>
