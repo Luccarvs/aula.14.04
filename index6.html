@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h2>Calculadora</h2>
+    <div>
+        <input type="number" id="v1" placeholder="Valor 1">
+        <input type="number" id="v2" placeholder="Valor 2">
+    </div>
+    <br>
+    <select id="operacoes">
+        <option value="soma">Somar</option>
+        <option value="subtracao">Subtrair</option>
+        <option value="multiplicacao">Multiplicar</option>
+        <option value="divisao">Dividir</option>
+    </select>
+    <br>
+    <button onclick="calcular();">Aplicar operação</button>
+    <br>
+    <p id="resultado"></p>
+    <script>
+        function calcular(){
+            const n1 = parseFloat(document.getElementById("v1").value);
+            const n2 = parseFloat(document.getElementById("v2").value);
+            const op = document.getElementById("operacoes").value; // Removido parseFloat
+            
+            // Verifica se os valores são números válidos
+            if(isNaN(n1) || isNaN(n2)) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira números válidos";
+                return;
+            }
+            
+            let res = 0;
+            let mensagem = "";
+            
+            if(op === "soma") {
+                res = n1 + n2;
+                mensagem = `Resultado: ${n1} + ${n2} = ${res}`;
+            } else if(op === "subtracao") {
+                res = n1 - n2;
+                mensagem = `Resultado: ${n1} - ${n2} = ${res}`;
+            } else if(op === "multiplicacao") {
+                res = n1 * n2;
+                mensagem = `Resultado: ${n1} × ${n2} = ${res}`;
+            } else if(op === "divisao") {
+                if(n2 === 0) {
+                    mensagem = "Erro: Divisão por zero!";
+                } else {
+                    res = n1 / n2;
+                    mensagem = `Resultado: ${n1} ÷ ${n2} = ${res}`;
+                }
+            }
+            
+            document.getElementById("resultado").innerHTML = mensagem;
+        }
+    </script>
+</body>
+</html>
